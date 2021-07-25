@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.strip::after{
+    content: "";
+    height: 1px;
+    background-color: lightgrey;
+    opacity: .3;
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 63px;
+    left: 0;
+    right: 0;
+}
+/* GALLERY */
+.gallery{
+    position: relative;
+}
+.slick-arrow{
+    font-size: 0;
+    color: transparent;
+    z-index: 1;
+    transform: rotateY(-50%);
+}
+.slick-arrow::before{
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-top: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+}
+.gallery:hover .slick-arrow::before{
+    opacity: 1;
+}
+.slick-prev{
+    left: 0;
+    top: 44%;
+    transform: rotate(-45deg);
+}
+.slick-next{
+    top: 49%;
+    right: 0;
+    transform: rotate(135deg);
+}
+.gallery-item{
+    position: relative;
+}
+.gallery-item:hover .gallery-img{
+    opacity: 0.7;
+}
+.gallery-item:hover .gallery-info{
+    opacity: 1;
+}
+.gallery-img{
+    transition: opacity 0.2s linear;
+}
+.gallery-info{
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, -50%, 0);
+    text-align: center;
+    transition: opacity 0.2s linear;
+    padding: 0 2%;
+}
+.circle {
+    border: 1px solid rgb(110, 110, 110);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+.text-config{
+    padding: 0 3rem;
+    margin: 3rem 0;
+}
+.border-top{
+    border-top: 2px solid grey;
+}
+.flex-column_revers{
+    flex-direction: row;
+}
+.responsive{
+    padding: 3rem 0;
+}
+.title{
+    margin: 3rem 0;
+}
+.form{
+    padding: 0 3rem;
+}
+@media screen and (max-width: 768px) {
+    .padding-config{
+        padding: 5px 0;
+    }
+    .text-config{
+        padding: 0 15px;
+        margin: 0;
+    }
+    .margin-reset{
+        margin: 0;
+    }
+    .padding-reset{
+        padding: 0;
+    }
+}
+@media screen and (max-width: 576px) {
+    .flex-column_revers{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .hide{
+        display: none;
+    }
+    .strip::after{
+        top: 61px;
+    }
+    .title{
+        margin: 2rem 0;
+    }
+    .form{
+        padding: 0 1rem;
+    }
+}
